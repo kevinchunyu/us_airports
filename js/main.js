@@ -41,7 +41,7 @@ airports = L.geoJson.ajax("assets/airports.geojson", {
 
 
 // 6. Set function for color ramp
-colors = chroma.scale('PuBuGn').colors(5); //colors = chroma.scale('RdPu').colors(5);
+colors = chroma.scale('OrRd').colors(5); //colors = chroma.scale('RdPu').colors(5);
 
 function setColor(count) {
   var id = 0;
@@ -61,15 +61,15 @@ function style(feature) {
       fillOpacity: 0.4,
       weight: 2,
       opacity: 1,
-      color: '#b4b4b4',
+      color: 'black',
       dashArray: '4'
   };
 }
 
-// 8. Add county polygons
-// create counties variable, and assign null to it.
-var counties = null;
-counties = L.geoJson.ajax("assets/us-states.geojson", {
+// 8. Add state polygons
+// create state variable, and assign null to it.
+var states = null;
+states = L.geoJson.ajax("assets/us-states.geojson", {
   style: style
 }).addTo(mymap);
 
@@ -82,7 +82,7 @@ legend.onAdd = function () {
 
   // Create Div Element and Populate it with HTML
   var div = L.DomUtil.create('div', 'legend');
-  div.innerHTML += '<b># Cell Tower</b><br />';
+  div.innerHTML += '<b># Control Tower</b><br />';
   div.innerHTML += '<i style="background: ' + colors[4] + '; opacity: 0.5"></i><p>19+</p>';
   div.innerHTML += '<i style="background: ' + colors[3] + '; opacity: 0.5"></i><p>14-18</p>';
   div.innerHTML += '<i style="background: ' + colors[2] + '; opacity: 0.5"></i><p>11-13</p>';
