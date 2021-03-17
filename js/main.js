@@ -101,3 +101,4 @@ legend.addTo(mymap);
 
 // 12. Add a scale bar to map
 L.control.scale({position: 'bottomleft'}).addTo(mymap);
+
